@@ -1,17 +1,3 @@
-# Lab Summary
+This project implements a Retrieval-Augmented Generation (RAG) pipeline using OpenAI's native APIs and Pinecone for vector storage. Text was extracted from a PDF dissertation using PyPDF2 and split into overlapping chunks of 1000 characters with a 200-character overlap to preserve context between sections. 
 
-## Overview
-
-Document your findings, results, and conclusions here.
-
-## Key Findings
-
-- 
-
-## Results
-
-- 
-
-## Next Steps
-
-- 
+OpenAI's text-embedding-3-small model was used to generate embeddings for each chunk, which were stored in a Pinecone index configured for cosine similarity search. User questions are embedded, matched against the stored vectors, and the most relevant chunks are retrieved and provided to GPT-4o-mini to generate grounded answers with source page citations.
